@@ -715,8 +715,8 @@ def asd_train(args, params=None):
     
     print('STOP HERE')
 
-    with open('args.json','w') as f:
-        json.dump(args, f, indent=4)
+    with open('args.json','w') as fp:
+        json.dump(vars(args), fp, indent=4)
 
 
     # # instantiate the agent

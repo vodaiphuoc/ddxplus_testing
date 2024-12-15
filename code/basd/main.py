@@ -198,7 +198,7 @@ def run(args):
 
     if args.run_mode == "train":
         args.log_params = True
-        tmp_args = vars(args) if hasattr(args, "__dict__") else args
+        # tmp_args = vars(args) if hasattr(args, "__dict__") else args
         # for k in tmp_args:
         #     mlflow.log_param(k, tmp_args.get(k))
         asd_train(args=args)
