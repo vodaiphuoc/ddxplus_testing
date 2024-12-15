@@ -1,1 +1,6 @@
 *.pyc
+myenv/
+data/
+*.pkl
+images/
+*.zip

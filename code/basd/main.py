@@ -169,11 +169,11 @@ def main():
 
     # to be done as soon as possible otherwise mlflow
     # will not log with the proper exp. name
-    mlflow.set_experiment(experiment_name=args.exp_name)
+    # mlflow.set_experiment(experiment_name=args.exp_name)
 
-    mlflow.start_run()
+    # mlflow.start_run()
     run(args)
-    mlflow.end_run()
+    # mlflow.end_run()
 
 
 def run(args):
@@ -199,10 +199,10 @@ def run(args):
     if args.run_mode == "train":
         args.log_params = True
         tmp_args = vars(args) if hasattr(args, "__dict__") else args
-        for k in tmp_args:
-            mlflow.log_param(k, tmp_args.get(k))
+        # for k in tmp_args:
+        #     mlflow.log_param(k, tmp_args.get(k))
         asd_train(args=args)
-        # ll
+        
     else:
         args.log_params = False
         asd_test(args=args)
