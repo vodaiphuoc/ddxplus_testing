@@ -1,5 +1,5 @@
 import os
-
+import json
 import mlflow
 import numpy as np
 import torch
@@ -714,6 +714,11 @@ def asd_train(args, params=None):
     args.patho_size = env_train.diag_size if args.patho_size is None else args.patho_size
     
     print('STOP HERE')
+
+    with open('args.json','w') as f:
+        json.dump(args, f, indent=4)
+
+
     # # instantiate the agent
     # args.device = torch.device(
     #     f"cuda:{args.cuda_idx}"
